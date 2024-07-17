@@ -5,7 +5,7 @@ pipeline {
  
         //SCANNER_HOME = tool 'sonar'
        
-        DOCKERFILE_PATH = 'C:\Users\PurvashGangolli\Desktop\Python\Dockerfile' // Update this with your Dockerfile path
+        //DOCKERFILE_PATH = 'C:\Users\PurvashGangolli\Desktop\Python\Dockerfile' // Update this with your Dockerfile path
         // DOCKER_IMAGE_TAG = 'keer:latest' // Update with your desired image name and tag
         DOCKER_IMAGE_NAME = 'Purvash'
         // DOCKER_IMAGE_TAG = 'latest'
