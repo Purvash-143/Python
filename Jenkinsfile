@@ -5,7 +5,7 @@ pipeline {
  
         //SCANNER_HOME = tool 'sonar'
        
-        //DOCKERFILE_PATH = 'C:\Users\PurvashGangolli\Desktop\Python\Dockerfile' // Update this with your Dockerfile path
+        DOCKERFILE_PATH = 'C:\\Users\\PurvashGangolli\\Desktop\\Python\\Dockerfile' // Update this with your Dockerfile path
         // DOCKER_IMAGE_TAG = 'keer:latest' // Update with your desired image name and tag
         DOCKER_IMAGE_NAME = 'python'
         // DOCKER_IMAGE_TAG = 'latest'
@@ -35,8 +35,8 @@ pipeline {
 
                     // Build Docker image using Docker Pipeline plugin
                     // dockerImage = docker.build("${DOCKER_IMAGE_TAG}", "-f ${DOCKERFILE_PATH} .")
-                    sh "docker build -t ${DOCKER_IMAGE_NAME} ."
-                    sh "docker images"
+                    bat "docker build -t ${DOCKER_IMAGE_NAME} ."
+                    bat "docker images"
                     //docker.tag dockerImage:latest docker.io/rakshashenoy/keer:latest
                     // docker.tag(dockerImage, 'rakshashenoy/samplerepo/keer:latest')
  
@@ -50,11 +50,11 @@ pipeline {
                     // Build Docker image using Docker Pipeline plugin
                     docker.withRegistry( 'https://docker.io', registryCredential) {
                      // Tag the Docker image
-                    sh "docker tag ${DOCKER_IMAGE_NAME} ${REGISTRY_IMAGE}"
+                    bat "docker tag ${DOCKER_IMAGE_NAME} ${REGISTRY_IMAGE}"
                     // dockerImage.push()
                     // bat "docker push rakshashenoy/keer:tagname"
                     // bat "docker push ${dockerImage}"
-                    sh "docker push ${REGISTRY_IMAGE}"
+                    bat "docker push ${REGISTRY_IMAGE}"
                     }
                 }
             }
