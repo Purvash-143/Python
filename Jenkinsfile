@@ -16,8 +16,8 @@ pipeline {
      
     }
  
-    /*stages {
-        stage('SonarQube Scan') {
+    stages {
+        /*stage('SonarQube Scan') {
             steps {
                 script{
                     // def props = readProperties file: 'sonar-project.properties'
@@ -87,9 +87,9 @@ pipeline {
         //         }
            
    
-       
-    }
         
+    }
+}
    
  
        
