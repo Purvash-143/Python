@@ -1,3 +1,4 @@
-FROM nginx:stable-alpine
-COPY index.html /usr/share/nginx/html/index.html
-COPY health-check.conf /etc/nginx/conf.d/health-check.conf
+FROM nginx:alpine
+
+COPY default.conf /etc/nginx/conf.d/
+COPY index.html /usr/share/nginx/html/
