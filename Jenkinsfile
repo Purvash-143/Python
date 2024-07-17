@@ -12,7 +12,7 @@ pipeline {
         REGISTRY_IMAGE = "docker.io/purvash/python:${BUILD_NUMBER}"
         //SONAR_PROJECT_KEY = ''
         // DOCKER_REGISTRY = 'https://hub.docker.com/r/purvash/python'
-        registryCredential = 'DOCKER_CREDENTIALS'
+        registryCredential = 'docker_crend'
      
     }
  
