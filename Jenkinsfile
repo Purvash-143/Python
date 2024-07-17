@@ -57,21 +57,21 @@ pipeline {
         //     }
         // }
  
-        // stage('Push Docker Image') {
-        //     steps {
-        //         script {
-        //             // Build Docker image using Docker Pipeline plugin
-        //             docker.withRegistry( 'https://docker.io', registryCredential) {
-        //              // Tag the Docker image
-        //             bat "docker tag ${DOCKER_IMAGE_NAME} ${REGISTRY_IMAGE}"
-        //             // dockerImage.push()
-        //             // bat "docker push rakshashenoy/keer:tagname"
-        //             // bat "docker push ${dockerImage}"
-        //             bat "docker push ${REGISTRY_IMAGE}"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // Build Docker image using Docker Pipeline plugin
+                    docker.withRegistry( 'https://docker.io', registryCredential) {
+                     // Tag the Docker image
+                    bat "docker tag ${DOCKER_IMAGE_NAME} ${REGISTRY_IMAGE}"
+                    // dockerImage.push()
+                    // bat "docker push rakshashenoy/keer:tagname"
+                    // bat "docker push ${dockerImage}"
+                    bat "docker push ${REGISTRY_IMAGE}"
+                    }
+                }
+            }
+        }
         // stage('Push Docker Image') {
         //     steps {
         //         script {
