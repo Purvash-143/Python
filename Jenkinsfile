@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image using Docker Pipeline plugin
-                    docker.withRegistry( 'https://docker.io', registryCredential) {
+                    docker.withRegistry( '', registryCredential) {
                      // Tag the Docker image
                     bat "docker tag ${DOCKER_IMAGE_NAME} ${REGISTRY_IMAGE}"
                     // dockerImage.push()
