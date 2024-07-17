@@ -31,6 +31,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    @Library('docker')
+
                     // Build Docker image using Docker Pipeline plugin
                     // dockerImage = docker.build("${DOCKER_IMAGE_TAG}", "-f ${DOCKERFILE_PATH} .")
                     bat "docker build -t ${DOCKER_IMAGE_NAME} ."
